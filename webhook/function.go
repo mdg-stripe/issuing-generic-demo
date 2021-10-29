@@ -27,9 +27,6 @@ func HandleWebhook(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	// Uncomment and replace with a real secret. You can find your endpoint's
-	// secret in your webhook settings.
-	//webhookSecret := "whsec_yHJJjRraIjX5HcmNjf7r8ppthog08QlJ"
 	webhookSecret := os.Getenv("WEBHOOK_SECRET")
 
 	// Verify webhook signature and extract the event.
