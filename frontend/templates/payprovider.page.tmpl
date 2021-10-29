@@ -1,0 +1,30 @@
+{{template "base" .}}
+
+{{define "title"}}Receipt{{end}}
+
+{{define "pagebody"}}
+<h1>Receipt</h1>
+<br>
+<dl class="row">
+  <dt class="col-sm-3">Merchant</dt>
+  <dd class="col-sm-9">{{.Merchant}}</dd>
+
+  <dt class="col-sm-3">Item</dt>
+  <dd class="col-sm-9">{{.Item}}</dd>
+
+  <dt class="col-sm-3">User</dt>
+  <dd class="col-sm-9">{{.User}}</dd>
+
+  <dt class="col-sm-3">Paid Amount</dt>
+  <dd class="col-sm-9">${{.SessionRate}}</dd>
+</dl>
+<hr>
+<p><p>
+The consumer sees that they immediately purchased the item. Under the hood, "MagicPay" used the Stripe API's
+to create a virtual credit card, and impose a spending control equal to the purchase amount.
+<p>
+Here's the newly issued card API object (raw number + CVC intentionally omitted). Scroll down to the second 
+<code>spending_controls</code> field - you'll see the max amount this card can spend.
+<pre>{{.CardAPIObject}}</pre>
+
+{{end}}

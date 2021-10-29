@@ -1,0 +1,24 @@
+{{template "base" .}}
+
+{{define "title"}}Login{{end}}
+
+{{define "pagebody"}}
+<h1>Login</h1>
+<br>
+<form class="row g-3" action="/merchant" method="POST">
+  <div class="col-auto">
+    <label for="inputEmailAddress" class="visually-hidden">Email</label>
+    <input type="email" class="form-control" name="inputEmailAddress" id="inputEmailAddress" placeholder="Email">
+  </div>
+  <div class="col-auto">
+    <label for="inputPassword" class="visually-hidden">Password</label>
+    <input type="password" class="form-control" name="inputPassword" id="inputPassword" placeholder="Password">
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-success mb-3">Sign in</button>
+  </div>
+</form>
+<p>
+For email address, use test@traintix.com (recommended b/c low purchase price doesn't drain Issuing balance), test@motoco.com, or test@fancybike.com. <br>
+Enter anything in the password field, it isn't used at all.
+{{end}}

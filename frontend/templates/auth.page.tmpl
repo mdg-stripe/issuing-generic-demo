@@ -1,0 +1,31 @@
+{{template "base" .}}
+
+{{define "title"}}Real-time auth{{end}}
+
+{{define "pagebody"}}
+<h1>Real-time auth</h1>
+<br>
+This is what Stripe sends to your server when an auth occurs. Your server has 2 seconds to respond to approve or deny the auth.
+
+<dl class="row">
+  <dt class="col-sm-3">Name</dt>
+  <dd class="col-sm-9">{{.Name}}</dd>
+
+  <dt class="col-sm-3">Amount</dt>
+  <dd class="col-sm-9">${{.Amount}}</dd>
+
+  <dt class="col-sm-3">Merchant</dt>
+  <dd class="col-sm-9">{{.Merchant}}</dd>
+
+  <dt class="col-sm-3">Item</dt>
+  <dd class="col-sm-9">{{.Item}}</dd>
+
+  <dt class="col-sm-3">Card last 4</dt>
+  <dd class="col-sm-9">{{.CardLast4}}</dd>
+</dl>
+
+Here's the entire object:
+
+<pre>{{.EntireObject}}</pre>
+
+{{end}}

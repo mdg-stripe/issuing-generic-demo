@@ -1,0 +1,9 @@
+{
+"stripe_secret_key": "sk_test_...",
+"brand_color_html_hex": "#e6ecf3",
+"bootstrap_navbar_text_color": "navbar-light",
+"html_title_text": "Stripe Issuing Demo",
+"merchant_logo": "logo_blue.png",
+"google_cloud_project_id": "",
+"localhost_port_string": "8080"
+}

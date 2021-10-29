@@ -1,0 +1,29 @@
+{{template "base" .}}
+
+{{define "title"}}Merchant Portal{{end}}
+
+{{define "pagebody"}}
+<h1>Merchant Portal - {{.MerchantName}} - Cards Available to Charge</h1>
+<br>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  {{range .Cards}}
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+      <h5 class="card-title">Card</h5>
+        <p class="card-text">Available for capture: ${{.CapturableAmount}}</p>
+        <p class="card-text">Customer name: {{.CustomerName}}</p>
+        <p class="card-text">Card number: {{.CardNumber}}</p>
+        <p class="card-text">Card CVC: {{.CardCVC}}</p>
+        <p class="card-text">Card exp: {{.CardExp}}</p>
+        <p class="card-text">Billing zip: {{.ZipCode}}</p>
+        <form method="POST" action="/auth">
+          <input type="hidden" name="cardID" id="cardID" value="{{.CardID}}">
+          <button class="btn btn-success" type="submit">Simulate Auth</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  {{end}}
+</div>
+{{end}}
