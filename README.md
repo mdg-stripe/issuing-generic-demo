@@ -10,14 +10,17 @@ Use cases could include travel agents (who collect payments in one lump, and the
 
 The demo backend is written in the Go programming language; the frontend is mostly plain HTML styled with Bootstrap.
 
+## Screenshot
+![Sample demo screenshot](demo_screenshot.png)
+
 ## Setup
 0. Install prerequisite software:
 * Go programming language: https://golang.org/dl/
 * Google Cloud SDK: cloud.google.com/sdk
 
-1. Create a test account for Stripe Issuing by following the scenario [here](https://admin.corp.stripe.com/scenarios/team/issuing). Give it a generous issuing top-up balance (default is $2500). Log in and note the Stripe secret key, which you'll need for the steps below.
+1. Create a test account for Stripe Issuing by contacting Stripe to enable test mode on your Issuing account. Log in and note the Stripe secret key, which you'll need for the steps below.
 
-2. While logged in with your @stripe.com account, navigate to console.cloud.google.com. 
+2. While logged in with your Google account, navigate to console.cloud.google.com. 
   * Create a new project if you don't already have one.
   * You may have to enter your own credit card to enable the account (try this guide with GCP's "free mode" first). Although this demo uses virtually no paid resources, set a reminder to delete the GCP account at a future date, so you're not charged for anything.
   * Navigate to the "Cloud Functions" and "Cloud Datastore" sections of the GCP console to enable those services.
