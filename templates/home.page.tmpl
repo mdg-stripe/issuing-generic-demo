@@ -1,0 +1,71 @@
+{{template "base" .}}
+
+{{define "title"}}Home{{end}}
+
+{{define "pagebody"}}
+<h1>Consumer Experience</h1>
+<br>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+  <div class="col">
+    <div class="card">
+      <img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/08/23/peloton.jpg?width=990&auto=webp&quality=75" class="card-img-top" alt="...">
+      <div class="card-body">
+      <h5 class="card-title">Merchant: FancyBike</h5>
+        <p class="card-text">Bicycle</p>
+        <p class="card-text">Cost: $500</p>
+        <form method="POST" action="/payprovider">
+          <input type="hidden" name="rate" id="rate" value="500">
+          <input type="hidden" name="acctId" id="acctId" value="FancyBike">
+          <input type="hidden" name="item" id="item" value="Bicycle">
+          <input type="text" name="user" id="user" placeholder="Logged in user"></input><br><br>
+          <button class="btn btn-success" type="submit">Pay with MagicPay</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card">
+      <img src="https://www.bonjourlife.com/wp-content/uploads/2017/03/Italian-Volt-Unveils-Fully-Customizable-Electric-Bike-Lacama-7.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+      <h5 class="card-title">Merchant: MotoCo</h5>
+        <p class="card-text">Electric motorcycle</p>
+        <p class="card-text">Cost: $3000</p>
+        <form method="POST" action="/payprovider">
+          <input type="hidden" name="rate" id="rate" value="3000">
+          <input type="hidden" name="acctId" id="acctId" value="MotoCo">
+          <input type="hidden" name="item" id="item" value="ElectricMotorcycle">
+          <input type="text" name="user" id="user" placeholder="Logged in user"></input><br><br>
+          <button class="btn btn-success" type="submit">Pay with MagicPay</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Brightline-trem-990x660.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+      <h5 class="card-title">Merchant: TrainTix</h5>
+        <p class="card-text">Train tour</p>
+        <p class="card-text">Cost: $400</p>
+        <form method="POST" action="/payprovider">
+          <input type="hidden" name="rate" id="rate" value="400">
+          <input type="hidden" name="acctId" id="acctId" value="TrainTix">
+          <input type="hidden" name="item" id="item" value="TrainTour">
+          <input type="text" name="user" id="user" placeholder="Logged in user"></input><br><br>
+          <button class="btn btn-success" type="submit">Pay with MagicPay</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p>
+<p>
+"MagicPay" could be a buy-now-pay-later payment provider; it could be a travel agent that makes multiple purchases on behalf of logged-in clients, etc.
+<p>
+
+{{end}}
